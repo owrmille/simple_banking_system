@@ -5,15 +5,14 @@ CREATE_CARD_TABLE = "CREATE TABLE IF NOT EXISTS card (id INTEGER PRIMARY KEY AUT
 DROP_TABLE = "DROP TABLE IF EXISTS card;"
 
 INSERT_CARD = "INSERT INTO card (number, pin) VALUES (?, ?);"
-GET_ALL_CARDS = "SELECT * FROM card;"
 DELETE_CARD = "DELETE FROM card WHERE number = ? AND pin = ?;"
 
 ADD_BALANCE = "UPDATE card SET balance = balance + ? WHERE number = ?;"
 DELETE_MONEY = "UPDATE card SET balance = balance - ? WHERE number = ?;"
 
-GET_BALANCE_BY_CARD = "SELECT balance FROM card WHERE number = ? AND pin = ?;"
+GET_ALL_CARDS = "SELECT * FROM card;"
 GET_CARD_BY = "SELECT * FROM card WHERE number = ? AND pin = ?;"
-GET_CARD_BY_NUMBER = "SELECT * FROM card WHERE number = ?"
+GET_CARD_BY_NUMBER = "SELECT * FROM card WHERE number = ?;"
 
 def create_tables(connection):
     with connection:
